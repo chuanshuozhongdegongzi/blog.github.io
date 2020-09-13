@@ -1,0 +1,146 @@
+<html>
+	<head>
+  		<title>倚剑听枫</title> 
+  		<meta name="keywords" content="倚剑听枫" /> 
+  		<meta name="description" content="一个整天瞎折腾and非码农的主页" /> 
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/chuanshuozhongdegongzi/ImageHosting/Img/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="assets/css/audio.css">
+	</head>
+	<body class="landing">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+						<img src="https://cdn.jsdelivr.net/gh/chuanshuozhongdegongzi/ImageHosting/Img/20200709151013.jpg
+" height="100" width="100" />
+							<h2>倚剑听枫的小窝</h2>
+                            
+							<p id="hitokoto"></p>
+<!-- 以下写法，选取一种即可 -->
+
+<!-- 现代写法，推荐 -->
+<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
+
+<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+<!--End-->
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(function (res){
+      return res.json();
+    })
+    .then(function (data) {
+      var hitokoto = document.getElementById('hitokoto');
+      hitokoto.innerText = '一言:'+' '+data.hitokoto; 
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
+</script>
+
+<!-- 老式写法，兼容性最忧 -->
+<!-- <script> -->
+  <!-- var xhr = new XMLHttpRequest(); -->
+  <!-- xhr.open('get', 'https://v1.hitokoto.cn'); -->
+  <!-- xhr.onreadystatechange = function () { -->
+    <!-- if (xhr.readyState === 4) { -->
+      <!-- var data = JSON.parse(xhr.responseText); -->
+      <!-- var hitokoto = document.getElementById('hitokoto'); -->
+      <!-- hitokoto.innerText = data.hitokoto; -->
+    <!-- } -->
+  <!-- } -->
+  <!-- xhr.send(); -->
+<!-- </script> -->
+
+<!-- 新 API 方法， 十分简洁 -->
+<!-- <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script> -->
+
+							<ul class="actions">
+								<li><a href="about.html"class="button special">元素周期表</a></li>
+							<!--		<li><a href="https://hitokoto.cn" class="button special">一言接口</a></li> -->
+                            	<!-- <li><a href="https://www..net/1780" class="button special">制作语录</a></li> -->
+                                <!-- <li><a href="https://www..net/1646" class="button special">制作随机图</a></li> -->
+                               <!-- <li><a href="https://mz..com" class="button special">小伟网</a></li> -->
+                              <!-- <li><a href="http://wpa.qq.com/msgrd?v=3&uin=1666969666&site=qq&menu=yes" class="button special">联系我 ❥(^_-)</a></li> -->
+							</ul>
+						</div><br>
+						<p>© 2020 倚剑听枫 版权所有<br/><a href="https://beian.miit.gov.cn" target="_blank">鲁ICP备20027822号</a></p>
+					</section>
+            </div>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+		<!-- mp3 -->
+
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+<script>
+	!function(e, t, a) {
+		function r() {
+			for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");
+			requestAnimationFrame(r)
+		}
+		function n() {
+			var t = "function" == typeof e.onclick && e.onclick;
+			e.onclick = function(e) {
+				t && t(),
+					o(e)
+			}
+		}
+		function o(e) {
+			var a = t.createElement("div");
+			a.className = "heart",
+				s.push({
+					el: a,
+					x: e.clientX - 5,
+					y: e.clientY - 5,
+					scale: 1,
+					alpha: 1,
+					color: c()
+				}),
+				t.body.appendChild(a)
+		}
+		function i(e) {
+			var a = t.createElement("style");
+			a.type = "text/css";
+			try {
+				a.appendChild(t.createTextNode(e))
+			} catch(t) {
+				a.styleSheet.cssText = e
+			}
+			t.getElementsByTagName("head")[0].appendChild(a)
+		}
+		function c() {
+			return "rgb(" + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + "," + ~~ (255 * Math.random()) + ")"
+		}
+		var s = [];
+		e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame ||
+			function(e) {
+				setTimeout(e, 1e3 / 60)
+			},
+			i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"),
+			n(),
+			r()
+	} (window, document);
+</script> 
